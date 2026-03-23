@@ -640,7 +640,7 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 					if o_url, err := url.Parse(xEmbeddingUri); err == nil {
 						if r_host, ok := p.replaceHostWithOriginal(o_url.Host); ok {
 							o_url.Host = r_host
-							req.exit("X-Embedding-Uri", o_url.String())
+							req.Header.Set("X-Embedding-Uri", o_url.String())
 						}
 					}
 				}
